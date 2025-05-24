@@ -1,5 +1,5 @@
 import {Component, inject} from '@angular/core';
-import {AsyncPipe, NgIf} from "@angular/common";
+import { AsyncPipe } from "@angular/common";
 import {User} from "@angular/fire/auth";
 import {AuthService} from "../authentication/auth.service";
 import {Router} from "@angular/router";
@@ -7,12 +7,11 @@ import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-header',
-  standalone: true,
   imports: [
-    NgIf,
     AsyncPipe
-  ],
+],
   templateUrl: './header.component.html',
+  standalone: true,
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {

@@ -22,18 +22,22 @@
       <textarea class="form-control" rows="4" cols="60" name="notes" id="notes" [(ngModel)]="address.notes"></textarea>
     </div>
   </fieldset>
+
   <div class="btn-toolbar" role="toolbar">
     <button class="btn btn-danger" name="delete" (click)="delete()">Delete</button>
-    <button  (click)="toggleEdit()"
-             class="btn btn-secondary m-auto" *ngIf="edit">
-      Protect
-    </button>
-    <button  (click)="toggleEdit()"
-             class="btn btn-secondary m-auto" *ngIf="!edit">
-      Edit
-    </button>
-    <button class="btn btn-dark"
-            [hidden]="addressForm.pristine"
-            name="save" (click)="save()">Save</button>
+
+    @if (edit) {
+      <button (click)="toggleEdit()" class="btn btn-secondary m-auto">
+        Protect
+      </button>
+    } @else {
+      <button (click)="toggleEdit()" class="btn btn-secondary m-auto">
+        Edit
+      </button>
+    }
+
+    @if (!addressForm.pristine) {
+      <button class="btn btn-dark" name="save" (click)="save()">Save</button>
+    }
   </div>
 </form>

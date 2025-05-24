@@ -1,16 +1,15 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormsModule} from "@angular/forms";
-import {NgIf} from "@angular/common";
+
 import {AddressEntry} from "../address-entry";
 
 @Component({
   selector: 'app-address-view',
-  standalone: true,
   imports: [
-    FormsModule,
-    NgIf
-  ],
+    FormsModule
+],
   templateUrl: './address-view.component.html',
+  standalone: true,
   styleUrl: './address-view.component.css'
 })
 export class AddressViewComponent implements OnInit {

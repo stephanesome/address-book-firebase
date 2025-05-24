@@ -3,21 +3,19 @@ import {AddressEntry} from "./address-entry";
 import {NotificationService} from "./notification.service";
 import {AddressListElementComponent} from "./address-list-element/address-list-element.component";
 import {AddressViewComponent} from "./address-view/address-view.component";
-import {NgForOf, NgIf, NgStyle} from "@angular/common";
+import { NgStyle } from "@angular/common";
 import {AddressDbService} from "./firestore/address-db.service";
 
 @Component({
   selector: 'app-address-list',
-  standalone: true,
   imports: [
     AddressListElementComponent,
     AddressViewComponent,
-    NgForOf,
-    NgIf,
     NgStyle
-  ],
+],
   templateUrl: './address-list.component.html',
   styleUrl: './address-list.component.css',
+  standalone: true,
   providers: [NotificationService]
 })
 export class AddressListComponent implements OnInit {

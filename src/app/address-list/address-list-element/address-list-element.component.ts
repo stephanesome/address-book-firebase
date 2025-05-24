@@ -6,11 +6,11 @@ import {NotificationService} from "../notification.service";
 
 @Component({
   selector: 'app-address-list-element',
-  standalone: true,
   imports: [
     NgClass
   ],
   templateUrl: './address-list-element.component.html',
+  standalone: true,
   styleUrl: './address-list-element.component.css'
 })
 export class AddressListElementComponent  implements OnInit, OnDestroy {
