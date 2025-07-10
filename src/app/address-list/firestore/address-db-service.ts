@@ -8,7 +8,7 @@ import {Firestore,
   deleteDoc} from "@angular/fire/firestore";
 import {Observable} from "rxjs";
 import {AddressEntry} from "../address-entry";
-import {AuthService} from "../../authentication/auth.service";
+import {AuthService} from "../../authentication/auth-service";
 
 @Injectable({
   providedIn: 'root'

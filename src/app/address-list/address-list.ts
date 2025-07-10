@@ -1,24 +1,23 @@
 import {Component, inject, OnInit} from '@angular/core';
 import {AddressEntry} from "./address-entry";
-import {NotificationService} from "./notification.service";
-import {AddressListElementComponent} from "./address-list-element/address-list-element.component";
-import {AddressViewComponent} from "./address-view/address-view.component";
+import {NotificationService} from "./notification-service";
+import {AddressListElement} from "./address-list-element/address-list-element";
+import {AddressView} from "./address-view/address-view";
 import { NgStyle } from "@angular/common";
-import {AddressDbService} from "./firestore/address-db.service";
+import {AddressDbService} from "./firestore/address-db-service";
 
 @Component({
   selector: 'app-address-list',
   imports: [
-    AddressListElementComponent,
-    AddressViewComponent,
+    AddressListElement,
+    AddressView,
     NgStyle
 ],
-  templateUrl: './address-list.component.html',
-  styleUrl: './address-list.component.css',
-  standalone: true,
+  templateUrl: './address-list.html',
+  styleUrl: './address-list.css',
   providers: [NotificationService]
 })
-export class AddressListComponent implements OnInit {
+export class AddressList implements OnInit {
   addresses: AddressEntry[] = [];
   currentAddress: AddressEntry | null = null;
   message: string = '';

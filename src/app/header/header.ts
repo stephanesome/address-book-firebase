@@ -1,7 +1,7 @@
 import {Component, inject} from '@angular/core';
 import { AsyncPipe } from "@angular/common";
 import {User} from "@angular/fire/auth";
-import {AuthService} from "../authentication/auth.service";
+import {AuthService} from "../authentication/auth-service";
 import {Router} from "@angular/router";
 import {Observable} from "rxjs";
 
@@ -10,11 +10,10 @@ import {Observable} from "rxjs";
   imports: [
     AsyncPipe
 ],
-  templateUrl: './header.component.html',
-  standalone: true,
-  styleUrl: './header.component.css'
+  templateUrl: './header.html',
+  styleUrl: './header.css'
 })
-export class HeaderComponent {
+export class Header {
   private authService: AuthService = inject(AuthService);
   private router: Router = inject(Router);
 

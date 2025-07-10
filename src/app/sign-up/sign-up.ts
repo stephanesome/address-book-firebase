@@ -1,7 +1,7 @@
 import {Component, inject} from '@angular/core';
 import {AbstractControl, ReactiveFormsModule, UntypedFormBuilder, ValidationErrors, Validators} from "@angular/forms";
 import {Router, RouterLink} from "@angular/router";
-import {AuthService} from "../authentication/auth.service";
+import {AuthService} from "../authentication/auth-service";
 
 function passwordMatcher(pwGrp: AbstractControl): ValidationErrors | null {
   const passwd = pwGrp.get('password');
@@ -15,11 +15,10 @@ function passwordMatcher(pwGrp: AbstractControl): ValidationErrors | null {
     ReactiveFormsModule,
     RouterLink
   ],
-  templateUrl: './sign-up.component.html',
-  standalone: true,
-  styleUrl: './sign-up.component.css'
+  templateUrl: './sign-up.html',
+  styleUrl: './sign-up.css'
 })
-export class SignUpComponent {
+export class SignUp {
   private builder: UntypedFormBuilder = inject(UntypedFormBuilder);
   private authService: AuthService = inject(AuthService);
   private router: Router = inject(Router);

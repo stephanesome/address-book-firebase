@@ -8,11 +8,10 @@ import {AddressEntry} from "../address-entry";
   imports: [
     FormsModule
 ],
-  templateUrl: './address-view.component.html',
-  standalone: true,
-  styleUrl: './address-view.component.css'
+  templateUrl: './address-view.html',
+  styleUrl: './address-view.css'
 })
-export class AddressViewComponent implements OnInit {
+export class AddressView implements OnInit {
   @Input() address!: AddressEntry;
   @Output() fireDelete: EventEmitter<AddressEntry> = new EventEmitter();
   @Output() fireSave: EventEmitter<AddressEntry> = new EventEmitter();

@@ -2,18 +2,17 @@ import {Component, inject, Input, OnDestroy, OnInit} from '@angular/core';
 import {NgClass} from "@angular/common";
 import {AddressEntry} from "../address-entry";
 import {Subscription} from "rxjs";
-import {NotificationService} from "../notification.service";
+import {NotificationService} from "../notification-service";
 
 @Component({
   selector: 'app-address-list-element',
   imports: [
     NgClass
   ],
-  templateUrl: './address-list-element.component.html',
-  standalone: true,
-  styleUrl: './address-list-element.component.css'
+  templateUrl: './address-list-element.html',
+  styleUrl: './address-list-element.css'
 })
-export class AddressListElementComponent  implements OnInit, OnDestroy {
+export class AddressListElement implements OnInit, OnDestroy {
   @Input()
   address: AddressEntry | undefined;
   selected = false;

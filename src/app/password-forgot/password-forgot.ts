@@ -1,17 +1,16 @@
 import {Component, inject} from '@angular/core';
 import {RouterLink} from "@angular/router";
-import {AuthService} from "../authentication/auth.service";
+import {AuthService} from "../authentication/auth-service";
 
 @Component({
   selector: 'app-password-forgot',
   imports: [
     RouterLink
   ],
-  templateUrl: './password-forgot.component.html',
-  standalone: true,
-  styleUrl: './password-forgot.component.css'
+  templateUrl: './password-forgot.html',
+  styleUrl: './password-forgot.css'
 })
-export class PasswordForgotComponent {
+export class PasswordForgot {
   private authService: AuthService = inject(AuthService);
 
   passwordReset(email: string): void {
